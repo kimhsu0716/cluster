@@ -3,8 +3,6 @@
 #include "queue.h"
 #include <stdlib.h>
 
-/* 주의! 큐가 비어있는 상태에서는 pop, front 함수를 실행하면 안 됨! */
-
 void init(Queue *q){ //큐 초기화
     q->size = 0;
     q->first = q->last = NULL;
@@ -21,6 +19,10 @@ void push(Queue *q, elem item){
 }
 
 elem pop(Queue *q){
+    if(empty(q)){ //큐가 비어있으면 -1로 채워진 elem을 리턴
+        elem item = {-1, -1, -1};
+        return elem;
+    }
     Node *del = q->first;
     elem ret = del->item;
     q->first = del->next;
@@ -30,6 +32,10 @@ elem pop(Queue *q){
 }
 
 elem front(Queue *q){
+    if(empty(q)){ //큐가 비어있으면 -1로 채워진 elem을 리턴
+        elem item = {-1, -1, -1};
+        return elem;
+    }
     return q->first->item;
 }
 
