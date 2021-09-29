@@ -21,7 +21,7 @@ void push(Queue *q, elem item){
 elem pop(Queue *q){
     if(empty(q)){ //큐가 비어있으면 -1로 채워진 elem을 리턴
         elem item = {-1, -1, -1};
-        return elem;
+        return item;
     }
     Node *del = q->first;
     elem ret = del->item;
@@ -34,7 +34,7 @@ elem pop(Queue *q){
 elem front(Queue *q){
     if(empty(q)){ //큐가 비어있으면 -1로 채워진 elem을 리턴
         elem item = {-1, -1, -1};
-        return elem;
+        return item;
     }
     return q->first->item;
 }
