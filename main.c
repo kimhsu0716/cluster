@@ -51,7 +51,7 @@ int main(){
             for(int j = 0; j < m; j++){
                 if(maze[i][j] == 'S') printf("●");
                 else if(maze[i][j] == 'G') printf("★");
-                else if(maze[i][j] == '0') printf("  ");
+                else if(maze[i][j] == '0') printf("　");
                 else printf("■");
             }
             printf("□\n");
